@@ -1,8 +1,7 @@
 # koa-rest-demo
+>REST demo with koa2
 
-## REST demo with koa2
-
-### use
+## use
 
 #### [koa2](https://github.com/koajs/koa)
 Node HTTP framework.
