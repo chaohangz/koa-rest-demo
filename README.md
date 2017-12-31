@@ -1,7 +1,16 @@
 # koa-rest-demo
 >REST demo with koa2
 
-## use
+## Installation
+```github
+git clone https://github.com/chaohangz/koa-rest-demo.git
+
+cd koa-rest-demo
+
+npm install
+```
+
+## Use
 
 #### [koa2](https://github.com/koajs/koa)
 Node HTTP framework.
