@@ -1,19 +1,29 @@
 {
-  "name": "koahello",
+  "name": "koa-rest-demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Koa2 RESTful API DEMO",
+  "author": "chaohang",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "supervisor --harmony app.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "koa": "^2.4.1",
     "koa-body": "^2.5.0",
     "koa-compose": "^4.0.0",
-    "koa-logger": "^3.1.0",
     "koa-router": "^7.2.1",
-    "koa-static": "^4.0.2"
+    "koa-static": "^4.0.2",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.28.6"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "koa-logger": "^3.1.0"
   }
 }
