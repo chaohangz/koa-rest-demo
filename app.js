@@ -5,12 +5,17 @@ const serve = require('koa-static')
 const Sequelize = require('sequelize')
 const path = require('path')
 const config = require('./config')
-const UserRoutes = require('./routes/userRoutes')
+const handleErr = require('./tools/handleErr')
+
+const UserRoutes = require('./routes/user')
 
 const app = new Koa()
 
 // 打印日志
 app.use(logger())
+
+// 错误处理
+app.use(handleErr)
 
 // 处理body
 app.use(koaBody())

@@ -10,7 +10,7 @@ module.exports = {
     'promise'
   ],
   env: {
-        'node': true
+    'node': true
   },
   rules: {
     // allow console
@@ -20,6 +20,12 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': 0
+    'no-debugger': 0,
+    // 要求使用拖尾逗号
+    'comma-dangle': ['error', 'always-multiline'],
+    'no-var': 1, // 不许使用var声明变量
+    'indent': [2, 2, {
+      'SwitchCase': 1,
+    }], // 缩进为2
   }
 }
