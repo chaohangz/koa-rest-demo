@@ -1,7 +1,7 @@
 const handleRes = require('../tools/handleRes')
 const UserModal = require('../model/user')
 
-exports.query = async (ctx, next) => {
+const query = async (ctx, next) => {
   const req = ctx.request
   const query = req.query
   const size = parseInt(query.size) || 10
@@ -18,19 +18,19 @@ exports.query = async (ctx, next) => {
   ctx.body = handleRes(users)
 }
 
-exports.detail = async (ctx, next) => {
+const detail = async (ctx, next) => {
   const user = await UserModal.findById(ctx.params.id)
   ctx.body = handleRes(user)
 }
 
-exports.create = async (ctx, next) => {
+const create = async (ctx, next) => {
   const data = ctx.request.body
   data.create_time = new Date()
   await UserModal.create(data)
   ctx.body = handleRes()
 }
 
-exports.update = async (ctx, next) => {
+const update = async (ctx, next) => {
   const data = ctx.request.body
   const user = await UserModal.findById(data.id)
   data.update_time = new Date()
@@ -38,8 +38,16 @@ exports.update = async (ctx, next) => {
   ctx.body = handleRes()
 }
 
-exports.remove = async (ctx, next) => {
+const remove = async (ctx, next) => {
   const user = await UserModal.findById(ctx.params.id)
   user.destroy()
   ctx.body = handleRes()
+}
+
+module.exports = {
+  'POST /user/query': query,
+  'GET /user/:id': detail,
+  'POST /user': create,
+  'PUT /user': update,
+  'DELETE /user/:id': remove,
 }

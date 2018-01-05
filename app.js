@@ -6,8 +6,7 @@ const Sequelize = require('sequelize')
 const path = require('path')
 const config = require('./config')
 const handleErr = require('./tools/handleErr')
-
-const UserRoutes = require('./routes/user')
+const handleRoutes = require('./tools/handleRoutes')
 
 const app = new Koa()
 
@@ -21,7 +20,7 @@ app.use(handleErr)
 app.use(koaBody())
 
 // router
-app.use(UserRoutes.routes())
+app.use(handleRoutes())
 
 app.use(serve(path.join(__dirname, 'public')))
 
