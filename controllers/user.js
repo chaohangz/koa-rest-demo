@@ -25,16 +25,15 @@ const detail = async (ctx, next) => {
 
 const create = async (ctx, next) => {
   const data = ctx.request.body
-  data.create_time = new Date()
+  data.createTime = Date.now()
   await UserModal.create(data)
   ctx.body = handleRes()
 }
 
 const update = async (ctx, next) => {
   const data = ctx.request.body
-  const user = await UserModal.findById(data.id)
-  data.update_time = new Date()
-  user.update(data)
+  data.updateTime = Date.now()
+  await UserModal.upsert(data)
   ctx.body = handleRes()
 }
 

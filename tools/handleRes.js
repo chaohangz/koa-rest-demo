@@ -1,16 +1,19 @@
-module.exports = (result) => {
-  if (result) {
+module.exports = (result, code, message) => {
+  code = code || '0000'
+  message = message || 'success'
+  if (code === '0000') {
     return {
-      code: '0000',
+      code,
       success: true,
-      message: 'success',
+      message,
       data: result,
     }
   } else {
     return {
-      code: '0000',
-      success: true,
-      message: 'success',
+      code,
+      success: false,
+      message,
+      data: result,
     }
   }
 }
