@@ -4,8 +4,7 @@
   "description": "Koa2 RESTful API DEMO",
   "author": "chaohang",
   "scripts": {
-    "start": "supervisor --harmony app.js",
-    "heroku": "node app.js"
+    "start": "supervisor --harmony app.js"
   },
   "dependencies": {
     "koa": "^2.4.1",
