@@ -25,6 +25,7 @@ app.use(UserRoutes.routes())
 
 app.use(serve(path.join(__dirname, 'public')))
 
-app.listen(config.System.port)
+const port = process.env.PORT || config.System.port
+app.listen(port)
 
-console.log('listening on port ' + config.System.port)
+console.log('listening on port ' + port)
